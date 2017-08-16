@@ -95,8 +95,8 @@ export default class TextareaAutosize extends React.Component {
   }
 
   componentWillReceiveProps() {
-    this._clearNextFrame();
     this._onNextFrameActionId = onNextFrame(() => this._resizeComponent());
+    this._clearNextFrame();
   }
 
   componentDidUpdate(prevProps, prevState) {
