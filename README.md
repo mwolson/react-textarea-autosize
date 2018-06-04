@@ -29,6 +29,9 @@ React.renderComponent(
 
 ## Changes in tt-react-textarea-autosize fork
 
+- Fix 'InvalidCallingObject' issue with IE 11
+- Performance: Use same `style` reference if no style changes occurred
+
 Original project: https://github.com/andreypopp/react-textarea-autosize
 
 ## Demo
