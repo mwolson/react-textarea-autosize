@@ -15,12 +15,10 @@ const noop = () => {};
 // so we bind window as context in dev modes
 const [onNextFrame, clearNextFrameAction] =
   isBrowser && window.requestAnimationFrame
-    ? process.env.NODE_ENV !== 'development'
-      ? [window.requestAnimationFrame, window.cancelAnimationFrame]
-      : [
-        window.requestAnimationFrame.bind(window),
-        window.cancelAnimationFrame.bind(window),
-      ]
+    ? [
+      window.requestAnimationFrame.bind(window),
+      window.cancelAnimationFrame.bind(window),
+    ]
     : [setTimeout, clearTimeout];
 
 export default class TextareaAutosize extends React.Component {
