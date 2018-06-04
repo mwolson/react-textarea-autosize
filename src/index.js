@@ -4,6 +4,7 @@
 
 import React from 'react';
 import PropTypes from 'prop-types';
+import shallowequal from 'shallowequal';
 import calculateNodeHeight, { purgeCache } from './calculateNodeHeight';
 import isBrowser from './isBrowser';
 import uid from './uid';
@@ -40,6 +41,7 @@ export default class TextareaAutosize extends React.Component {
   };
 
   _resizeLock = false;
+  _style = null;
 
   constructor(props) {
     super(props);
@@ -63,19 +65,24 @@ export default class TextareaAutosize extends React.Component {
       ...props
     } = this.props;
 
-    props.style = {
+    const newStyle = {
       ...props.style,
       height: this.state.height,
     };
 
     let maxHeight = Math.max(
-      props.style.maxHeight || Infinity,
+      newStyle.maxHeight || Infinity,
       this.state.maxHeight,
     );
 
     if (maxHeight < this.state.height) {
-      props.style.overflow = 'hidden';
+      newStyle.overflow = 'hidden';
     }
+
+    if (!shallowequal(this._style, newStyle)) {
+      this._style = newStyle;
+    }
+    props.style = this._style;
 
     return (
       <textarea
