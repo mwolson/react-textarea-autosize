@@ -27,6 +27,10 @@ React.renderComponent(
 
 `npm install react-textarea-autosize`
 
+## Changes in tt-react-textarea-autosize fork
+
+Original project: https://github.com/andreypopp/react-textarea-autosize
+
 ## Demo
 
 https://andreypopp.github.io/react-textarea-autosize/

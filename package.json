@@ -1,9 +1,9 @@
 {
-  "name": "react-textarea-autosize",
+  "name": "tt-react-textarea-autosize",
   "description": "textarea component for React which grows with content",
   "version": "6.1.0",
   "keywords": "autosize, grow, react, react-component, textarea",
-  "repository": "andreypopp/react-textarea-autosize",
+  "repository": "mwolson/react-textarea-autosize",
   "license": "MIT",
   "main": "dist/react-textarea-autosize.cjs.js",
   "module": "dist/react-textarea-autosize.es.js",
